@@ -1,3 +1,6 @@
+# 완전 탐색
+# 말 그대로 다 탐색...
+
 def checkWB(list):
     count = 0
     WB = ['W', 'B', 'W', 'B', 'W', 'B', 'W', 'B']
@@ -22,17 +25,19 @@ result = 64
 # 시작 위치 찾는 이중 for문
 for i in range(N + 1 - 8):
     for j in range(M + 1 - 8):
-        temp = 0
-        if board[i][j] == 'W':
-            for k in range(i, i + 7, 2):
-                temp += checkWB(board[k][j:j+8])
-                temp += checkBW(board[k + 1][j:j+8])
-        else:
-            for k in range(i, i + 7, 2):
-                temp += checkBW(board[k][j:j+8])
-                temp += checkWB(board[k + 1][j:j+8])
+        temp1 = 0
+        temp2 = 0
+        #if board[i][j] == 'W':
+        # 'W'로 시작할 경우
+        for k in range(i, i + 7, 2):
+            temp1 += checkWB(board[k][j:j+8])
+            temp1 += checkBW(board[k + 1][j:j+8])
+        #else:
+        # 'B'로 시작할 경우
+        for k in range(i, i + 7, 2):
+            temp2 += checkBW(board[k][j:j+8])
+            temp2 += checkWB(board[k + 1][j:j+8])
         
-        if result > temp:
-            result = temp
+        result = min(result, temp1, temp2)
 
 print(result)
