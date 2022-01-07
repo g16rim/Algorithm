@@ -1,3 +1,3 @@
-# boj
+<h1>Baekjoon Online Judge</h1>
 
-알고리즘 백준
+python 또는 C++로 작성
