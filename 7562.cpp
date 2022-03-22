@@ -41,3 +41,63 @@ int main () {
         cout << cnt << '\n';
     }
 }
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int l, tarx, tary;
+queue<pair<pair<int, int>, int>> q;
+bool visited[301][301];
+
+void BFS() {
+    int dx[] = {-2, -1, 1, 2, 2, 1, -1, -2};
+    int dy[] = {1, 2, 2, 1, -1, -2, -2, -1};
+    
+    for(int i = 0; i < 301; i++) {
+        for(int j = 0; j < 301; j++) {
+            visited[i][j] = false;
+        }
+    }
+    
+    while(!q.empty()) {
+        pair<pair<int, int>, int> temp = q.front();
+        q.pop();
+        
+        int x = temp.first.first;
+        int y = temp.first.second;
+        
+        if (x == tarx && y == tary) {
+            cout << temp.second << '\n';
+            return;
+        }
+        
+        for (int i = 0; i < 8; i++) {
+            // board 안 && !visited 이면 q.push_back
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+            if (nx >= 0 && nx < l && ny >= 0 && ny < l && visited[nx][ny] == false) {
+                q.push(make_pair(make_pair(nx, ny), temp.second + 1));
+                visited[nx][ny] = true;
+            }
+        }
+    }
+}
+
+int main() {
+    int tc;
+    cin >> tc;
+    while(tc--) {
+        int x, y;
+        cin >> l;
+        cin >> x >> y;
+        visited[x][y] = true;
+        q.push(make_pair(make_pair(x, y), 0));
+        cin >> tarx >> tary;
+        BFS(); 
+        while(!q.empty()) q.pop(); // queue clear 안 하면 33% 틀림
+    }
+}
