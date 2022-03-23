@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> //////메모리 
 using namespace std;
 
 int n, k;
@@ -37,4 +37,48 @@ int main() {
     cin >> n >> k;
     for (int i = 0; i < 100001; i++) visited[i] = false;
     bfs();
+}
+
+-------------------------------------------------------------------
+    
+#include <bits/stdc++.h>
+using namespace std;
+
+int visited[100001];
+queue<pair<int, int>> q;
+
+void bfs(int n, int k) {
+    visited[n] = 1;
+    q.push(make_pair(n, 0));
+    while(!q.empty()) {
+        int x = q.front().first;
+        int cnt = q.front().second;
+        
+        if (x == k) {
+            cout << cnt << '\n';
+            return;
+        }
+        
+        if (2*x <= 100000 && visited[2*x]==0) {
+            q.push(make_pair(2*x, cnt+1));
+            visited[2*x] = 1;
+        }
+        if (x+1 <= 100000 && visited[x+1]==0) {
+            q.push(make_pair(x+1, cnt+1));
+            visited[x+1] = 1;
+        }
+        if (x-1 >= 0 && visited[x-1]==0) {
+            q.push(make_pair(x-1, cnt+1));
+            visited[x-1] = 1;
+        }
+        
+        q.pop();
+    }
+}
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    bfs(n, k);
+    return 0;
 }
