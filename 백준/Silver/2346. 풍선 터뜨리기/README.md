@@ -26,3 +26,20 @@
 
  <p>첫째 줄에 터진 풍선의 번호를 차례로 나열한다.</p>
 
+<br>
+
+## New! (추가 작성)
+
+### enumerate
+- 기존 인덱스 저장을 위해 list 대신 enumerate 사용
+- 예: [(0, 3), (1, 2), (2, 1), (3, -3), (4, -1)]
+- (index, value)
+
+### deque 
+- from collections import deque
+- Python 자료구조, 원형 덱처럼 사용 가능
+- rotate(1): 시계 방향을 1칸 회전(기준 인덱스는 오른쪽 방향을 1칸 이동)
+- rotate(-1): 반시계 방향을 1칸 회전(기준 인덱스는 왼쪽 방향을 1칸 이동)
+
+### print(*list)
+- list 속 데이터를 전체 출력하고자 할 때 for문 대신 사용
