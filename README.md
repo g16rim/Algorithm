@@ -9,13 +9,13 @@
 
 - 기본 코드에 대한 설명(적용 알고리즘)
 - 문제 풀이를 위한 로직이나 접근 방식 설명
-- 문제 풀이하면서 어려웠던 점이나 실패를 다면 틀렸던 이유도 설명
+- 문제 풀이하면서 어려웠던 점이나 실패했다면 틀렸던 이유도 설명
 
 #### BOJ 코드 올리기
 - Using a 백준허브 (Chrome Extension)    
 - https://velog.io/@flaxinger/%EB%B0%B1%EC%A4%80%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95
 
-## 일정표
+## 진행 일정표
 
 ### Baekjoon Online Judge
 
