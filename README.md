@@ -12,7 +12,7 @@
 - 문제 풀이하면서 어려웠던 점이나 실패했다면 틀렸던 이유도 설명
 
 #### 코드 올리기
-- Using a 백준허브 (Chrome Extension)    
+- 백준허브 (Chrome Extension)
 - https://velog.io/@flaxinger/%EB%B0%B1%EC%A4%80%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95
 
 ## 진행 일정표
