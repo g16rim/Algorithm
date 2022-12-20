@@ -12,8 +12,7 @@
 - 문제 풀이하면서 어려웠던 점이나 실패했다면 틀렸던 이유도 설명
 
 #### 코드 올리기
-- 백준허브 (Chrome Extension)
-- https://velog.io/@flaxinger/%EB%B0%B1%EC%A4%80%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95
+- [백준허브 (Chrome Extension)](https://velog.io/@flaxinger/%EB%B0%B1%EC%A4%80%ED%97%88%EB%B8%8C-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95)
 
 ## 진행 일정표
 
@@ -23,7 +22,7 @@
 
 | **주차** |  **문제** |  **알고리즘 분류** |  **문제** |  **알고리즘 분류** |
 | -------- | --------- | ------------------- | --------- | ------------------ | 
-| 4주차    | 1992 쿼드트리 | 분할 정복, 재귀 | 11057 오르막 수 |dp|
+| 4주차    | [1992 쿼드트리](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1992.%E2%80%85%EC%BF%BC%EB%93%9C%ED%8A%B8%EB%A6%AC) | 분할 정복, 재귀 | [11057 오르막 수](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/11057.%E2%80%85%EC%98%A4%EB%A5%B4%EB%A7%89%E2%80%85%EC%88%98) |dp|
 
 
 ## 스터디 이외 개인적으로 푼 문제들
@@ -32,4 +31,4 @@
 
 | **문제** | **알고리즘 분류** | **문제** | **알고리즘 분류** |
 | -------- | ------------------ | -------- | ----------------- |
-|2346 풍선 터뜨리기|자료 구조, 덱|10655 마라톤 1|구현, 브루트포스 알고리즘, 기하학|
+|[2346 풍선 터뜨리기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2346.%E2%80%85%ED%92%8D%EC%84%A0%E2%80%85%ED%84%B0%EB%9C%A8%EB%A6%AC%EA%B8%B0)|자료 구조, 덱|[10655 마라톤 1](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/10655.%E2%80%85%EB%A7%88%EB%9D%BC%ED%86%A4%E2%80%851)|구현, 브루트포스 알고리즘, 기하학|
