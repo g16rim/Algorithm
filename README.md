@@ -23,8 +23,13 @@
 | **주차** |  **문제** |  **알고리즘 분류** |  **문제** |  **알고리즘 분류** |
 | -------- | --------- | ------------------- | --------- | ------------------ | 
 | 4주차    | [1992 쿼드트리](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1992.%E2%80%85%EC%BF%BC%EB%93%9C%ED%8A%B8%EB%A6%AC) | 분할 정복, 재귀 | [11057 오르막 수](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/11057.%E2%80%85%EC%98%A4%EB%A5%B4%EB%A7%89%E2%80%85%EC%88%98) |dp|
-|5주차|[11403 경로 찾기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/11403.%E2%80%85%EA%B2%BD%EB%A1%9C%E2%80%85%EC%B0%BE%EA%B8%B0)|그래프 이론, 그래프 탐색, 플로이드-워셜| | |
+|5주차|[11403 경로 찾기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/11403.%E2%80%85%EA%B2%BD%EB%A1%9C%E2%80%85%EC%B0%BE%EA%B8%B0)|그래프 이론, 그래프 탐색, 플로이드-워셜|[7576 토마토](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Gold/7576.%E2%80%85%ED%86%A0%EB%A7%88%ED%86%A0)|그래프 이론, 그래프 탐색, 너비 우선 탐색|
 
+##### 2023-01
+
+| **주차** |  **알고리즘 분류** | **문제** | **문제** |
+| -------- | ------------------ | -------- | -------- |
+| 1주차 | 그리디 | | |
 
 ## 스터디 이외 개인적으로 푼 문제들
 
