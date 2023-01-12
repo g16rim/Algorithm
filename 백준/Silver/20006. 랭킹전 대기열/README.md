@@ -48,3 +48,6 @@
 
 <p>방이 시작되었으면 Started!를 대기 중이면 Waiting!을 출력시킨다.</p>
 
+### 참고
+https://velog.io/@daeungdaeung/%EB%B0%B1%EC%A4%80-20006-%EB%9E%AD%ED%82%B9%EC%A0%84-%EB%8C%80%EA%B8%B0%EC%97%B4-with-Python
+
