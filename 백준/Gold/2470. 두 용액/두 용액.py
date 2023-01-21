@@ -21,3 +21,6 @@ while start < end:
         start += 1
         
 print(result[0], result[1])
+
+# Min: 두 용액의 합의 0으로부터 거리(절대값)
+# temp: 두 용액의 합
