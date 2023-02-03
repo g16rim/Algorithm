@@ -66,3 +66,12 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+<hr>
+
+### 풀이 과정
+
+1. st = [] -> stack 이용
+2. ( 열린 괄호일 때 st.append()
+3. st이 비어있을 때 ) 닫힌 괄호가 들어오면 바로 return False
+4. for문 끝나고 st에 ( 열린 괄호가 남아있으면 return False
