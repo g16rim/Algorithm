@@ -2,7 +2,7 @@ graph = [[0] * 20]
 for i in range(1, 20):
     graph.append([0] + list(map(int, input().split())))
     
-def bfs(x, y):
+def sol(x, y):
     # 현재 바둑돌 색깔
     win = graph[x][y]
     
@@ -42,6 +42,6 @@ def bfs(x, y):
 for i in range(1, 20):
     for j in range(1, 20):
         if graph[i][j] != 0:
-            bfs(i, j)
+            sol(i, j)
             
 print(0)
