@@ -33,7 +33,7 @@ def bfs(x, y):
                 # 오목이면
                 print(win)
                 print(x, y)
-                exit(0)
+                exit()
                 
             # 원래 방향대로 이동
             nx += dx[i]
