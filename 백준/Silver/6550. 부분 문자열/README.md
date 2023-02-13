@@ -22,3 +22,7 @@
 
  <p>입력된 s와 t의 순서대로 s가 t의 부분 문자열인 경우 Yes라 출력하고 아닐 경우 No라고 출력한다.</p>
 
+### New
+
+파이썬에서 입력 끝날 때까지 받고 종료하는 조건<br>
+https://best-iodine-9e5.notion.site/a8c8fbd4c3624631bbd0af40d5b377ed
