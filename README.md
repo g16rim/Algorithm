@@ -41,15 +41,12 @@
 
 ##### 2023-02
 
-| **주차** | **문제** | **알고리즘 분류** | **문제** | **알고리즘 분류** | **문제** | **알고리즘 분류** |
-| -------- | -------- | ----------------- | -------- | ---------------- | -------- | ----------------- |
-| 1주차    | [lv2. 올바른 괄호](https://github.com/g16rim/algorithm_study/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/12909.%E2%80%85%EC%98%AC%EB%B0%94%EB%A5%B8%E2%80%85%EA%B4%84%ED%98%B8) | 스택/큐 |[오목](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2615.%E2%80%85%EC%98%A4%EB%AA%A9)|구현 | | |
-|2주차|[계단 오르기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2579.%E2%80%85%EA%B3%84%EB%8B%A8%E2%80%85%EC%98%A4%EB%A5%B4%EA%B8%B0)|dp|[동전 1](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Gold/2293.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%851)|dp|[화살표 그리기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/15970.%E2%80%85%ED%99%94%EC%82%B4%ED%91%9C%E2%80%85%EA%B7%B8%EB%A6%AC%EA%B8%B0)|브루트 포스|
+| **주차** | **문제** | **문제** | **문제** |
+| -------- | -------- | -------- | -------- |
+| 1주차    | [lv2. 올바른 괄호](https://github.com/g16rim/algorithm_study/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/12909.%E2%80%85%EC%98%AC%EB%B0%94%EB%A5%B8%E2%80%85%EA%B4%84%ED%98%B8) | [오목](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2615.%E2%80%85%EC%98%A4%EB%AA%A9)| |
+|2주차|[계단 오르기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2579.%E2%80%85%EA%B3%84%EB%8B%A8%E2%80%85%EC%98%A4%EB%A5%B4%EA%B8%B0)|[동전 1](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Gold/2293.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%851)|[화살표 그리기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/15970.%E2%80%85%ED%99%94%EC%82%B4%ED%91%9C%E2%80%85%EA%B7%B8%EB%A6%AC%EA%B8%B0)|
+| 4주차 | | | |
+
 ## 스터디 이외 개인적으로 푼 문제들
 
-### Baekjoon Online Judge
-
-| **문제** | **알고리즘 분류** | **문제** | **알고리즘 분류** |
-| -------- | ------------------ | -------- | ----------------- |
-|[풍선 터뜨리기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2346.%E2%80%85%ED%92%8D%EC%84%A0%E2%80%85%ED%84%B0%EB%9C%A8%EB%A6%AC%EA%B8%B0)|자료 구조, 덱|[마라톤 1](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/10655.%E2%80%85%EB%A7%88%EB%9D%BC%ED%86%A4%E2%80%851)|구현, 브루트포스 알고리즘, 기하학|
-|[뒤집기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1439.%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0)|그리디|||
+### Baekjoon Online Judge + Programmers
