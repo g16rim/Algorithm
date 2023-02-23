@@ -45,7 +45,8 @@
 | -------- | -------- | -------- | -------- |
 | 1주차    | [lv2. 올바른 괄호](https://github.com/g16rim/algorithm_study/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/12909.%E2%80%85%EC%98%AC%EB%B0%94%EB%A5%B8%E2%80%85%EA%B4%84%ED%98%B8) | [오목](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2615.%E2%80%85%EC%98%A4%EB%AA%A9)| |
 |2주차|[계단 오르기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/2579.%E2%80%85%EA%B3%84%EB%8B%A8%E2%80%85%EC%98%A4%EB%A5%B4%EA%B8%B0)|[동전 1](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Gold/2293.%E2%80%85%EB%8F%99%EC%A0%84%E2%80%851)|[화살표 그리기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/15970.%E2%80%85%ED%99%94%EC%82%B4%ED%91%9C%E2%80%85%EA%B7%B8%EB%A6%AC%EA%B8%B0)|
-| 4주차 | | | |
+| 4주차 |[부분 문자열](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Bronze/16916.%E2%80%85%EB%B6%80%EB%B6%84%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4)|[부분수열의 합](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1182.%E2%80%85%EB%B6%80%EB%B6%84%EC%88%98%EC%97%B4%EC%9D%98%E2%80%85%ED%95%A9)| |
+|5주차|절댓값 힙|잃어버린 괄호||
 
 ## 스터디 이외 개인적으로 푼 문제들
 
