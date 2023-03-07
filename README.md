@@ -49,6 +49,9 @@
 |5주차|[절댓값 힙](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/11286.%E2%80%85%EC%A0%88%EB%8C%93%EA%B0%92%E2%80%85%ED%9E%99)|[잃어버린 괄호](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1541.%E2%80%85%EC%9E%83%EC%96%B4%EB%B2%84%EB%A6%B0%E2%80%85%EA%B4%84%ED%98%B8)|[222-풀링](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/17829.%E2%80%85222%EF%BC%8D%ED%92%80%EB%A7%81)|
 
 ##### 2023-03
+| **주차** | **문제** | **문제** |**문제** |
+| -------- | -------- | -------- |-------- |
+|1주차|[케빈 베이컨의 6단계 법칙](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1389.%E2%80%85%EC%BC%80%EB%B9%88%E2%80%85%EB%B2%A0%EC%9D%B4%EC%BB%A8%EC%9D%98%E2%80%856%EB%8B%A8%EA%B3%84%E2%80%85%EB%B2%95%EC%B9%99)|[상자넣기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1965.%E2%80%85%EC%83%81%EC%9E%90%EB%84%A3%EA%B8%B0)|[알고리즘 수업 - 깊이 우선 탐색 5](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/24483.%E2%80%85%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%E2%80%85%EC%88%98%EC%97%85%E2%80%85%EF%BC%8D%E2%80%85%EA%B9%8A%EC%9D%B4%E2%80%85%EC%9A%B0%EC%84%A0%E2%80%85%ED%83%90%EC%83%89%E2%80%855)
 
 ## 스터디 이외 개인적으로 푼 문제들
 
