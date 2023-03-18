@@ -2,7 +2,7 @@ n, l = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(n)]
 arr.sort(key=lambda x:x[0])
 
-temp = 0 # 마지막 널빤지 위치
+temp = 0 # 마지막 널빤지 위치 다음을 가르키는 변수
 result = 0
 
 for start, end in arr:
@@ -12,7 +12,7 @@ for start, end in arr:
     
     temp = max(start, temp)
     
-    cnt = (end-(temp+1)) // l + 1 # 현재 웅덩이를 커버할 널빤지 개수
+    cnt = (end-1-temp) // l + 1 # 현재 웅덩이를 커버할 널빤지 개수
     result += cnt    
     temp += l * cnt
     
