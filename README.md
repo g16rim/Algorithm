@@ -54,7 +54,7 @@
 |1주차|[케빈 베이컨의 6단계 법칙](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1389.%E2%80%85%EC%BC%80%EB%B9%88%E2%80%85%EB%B2%A0%EC%9D%B4%EC%BB%A8%EC%9D%98%E2%80%856%EB%8B%A8%EA%B3%84%E2%80%85%EB%B2%95%EC%B9%99)|[상자넣기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1965.%E2%80%85%EC%83%81%EC%9E%90%EB%84%A3%EA%B8%B0)|[알고리즘 수업 - 깊이 우선 탐색 5](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/24483.%E2%80%85%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%E2%80%85%EC%88%98%EC%97%85%E2%80%85%EF%BC%8D%E2%80%85%EA%B9%8A%EC%9D%B4%E2%80%85%EC%9A%B0%EC%84%A0%E2%80%85%ED%83%90%EC%83%89%E2%80%855)|
 |2주차|[신입 사원](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1946.%E2%80%85%EC%8B%A0%EC%9E%85%E2%80%85%EC%82%AC%EC%9B%90)|[올림픽](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/8979.%E2%80%85%EC%98%AC%EB%A6%BC%ED%94%BD)|
 |4주차|[흙길 보수하기](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1911.%E2%80%85%ED%9D%99%EA%B8%B8%E2%80%85%EB%B3%B4%EC%88%98%ED%95%98%EA%B8%B0)|
-|5주차|[그림]()|
+|5주차|[그림](https://github.com/g16rim/algorithm_study/tree/master/%EB%B0%B1%EC%A4%80/Silver/1926.%E2%80%85%EA%B7%B8%EB%A6%BC)|[lv2. 숫자의 표현](https://github.com/g16rim/algorithm_study/tree/master/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/lv2/12924.%E2%80%85%EC%88%AB%EC%9E%90%EC%9D%98%E2%80%85%ED%91%9C%ED%98%84)
 
 ## 스터디 이외 개인적으로 푼 문제들
 
