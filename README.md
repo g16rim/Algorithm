@@ -2,6 +2,9 @@
 
 > 코딩 테스트를 위한 소소한 알고리즘 스터디
 - 언어: Python
+<details>
+<summary>👩‍💻</summary>
+<div markdown="1">
 
 ## 스터디 진행 방식
 
@@ -59,3 +62,7 @@
 ## 스터디 이외 개인적으로 푼 문제들
 
 ### Baekjoon Online Judge + Programmers
+
+
+</div>
+</details>
