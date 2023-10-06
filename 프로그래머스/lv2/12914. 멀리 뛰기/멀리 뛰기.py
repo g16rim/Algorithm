@@ -6,7 +6,10 @@ def solution(n):
     one = n-2 # 1의 개수
     two = 1 # 2의 개수
     for i in range(n-1, end-1, -1):
-        answer += factorial(one+two) // (factorial(one)*factorial(two))
+        # / -> //로 수정해서 런타임 에러(오버플로우) 해결
+        # / 연산 결과 float
+        # // 연산 결과 int
+        answer += math.factorial(one+two) // (math.factorial(one)*math.factorial(two))
         one -= 2
         two += 1
     return answer % 1234567
