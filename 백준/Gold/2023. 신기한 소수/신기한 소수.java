@@ -24,8 +24,6 @@ public class Main {
 			return;
 		}
 		
-		if (isPrime(num) == false) return;
-		
 		for (int i = 0; i < 10; i++) {
 			int temp = num * 10 + i;
 			
