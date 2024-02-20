@@ -31,7 +31,12 @@ public class Main {
 				}
 			}
 		}
-		visited = new boolean[N][N];
+//		visited = new boolean[N][N];
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++) {
+				visited[i][j] = false;
+			}
+		}
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				if (visited[i][j] == false) {
