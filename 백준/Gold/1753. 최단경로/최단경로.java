@@ -10,18 +10,13 @@ public class Main {
 	static List<Node>[] graph;
 	static StringBuilder sb = new StringBuilder();
 
-	static class Node implements Comparable<Node> {
+	static class Node {
 		int to;
 		int weight;
 		
 		public Node(int to, int weight) {
 			this.to = to;
 			this.weight = weight;
-		}
-
-		@Override
-		public int compareTo(Node o) {
-			return Integer.compare(this.weight, o.weight);
 		}
 	}
 	
@@ -56,7 +51,8 @@ public class Main {
 		Arrays.fill(minDistance, Integer.MAX_VALUE);
 		minDistance[start] = 0;
 		
-		PriorityQueue<Node> pq = new PriorityQueue<>();
+		PriorityQueue<Node> pq = new PriorityQueue<Node>
+        ((o1, o2) -> Integer.compare(o1.weight, o2.weight));
 		pq.add(new Node(start, 0));
 		
 		while (!pq.isEmpty()) {
@@ -66,8 +62,10 @@ public class Main {
 			visited[temp] = true;
 			
 			for (Node next : graph[temp]) {
-				minDistance[next.to] = Math.min(minDistance[next.to], minDistance[temp] + next.weight);
-				pq.add(new Node(next.to, minDistance[next.to]));
+				if (minDistance[next.to] > minDistance[temp] + next.weight) {
+					minDistance[next.to] = minDistance[temp] + next.weight;
+					pq.add(new Node(next.to, minDistance[next.to]));					
+				}
 			}
 		}
 		
