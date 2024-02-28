@@ -46,14 +46,14 @@ public class Solution {
             }
 
             coresDir = new int[cores.size()];
-            setCoresDir(0, 0);
+            setCoresDir(0, 0, 0);
             sb.append("#").append(tc).append(" ").append(result[1]).append("\n");
             cores.clear();
         }
         System.out.print(sb);
     }
 
-    private static boolean makeLine(int i, int dir) {
+    private static int makeLine(int i, int dir) {
         // i번째 core, dir = coresDir[i]
         int x = cores.get(i).x;
         int y = cores.get(i).y;
@@ -78,9 +78,10 @@ public class Solution {
             for (int j = 0; j < history.size(); j++) {
                 originCell[history.get(j).x][history.get(j).y] = 0;
             }
+            return 0;
         }
 
-        return canMake;
+        return history.size();
     }
 
     private static void eraseLine(int i, int dir) {
@@ -97,41 +98,29 @@ public class Solution {
         }
     }
 
-    private static int compareOne() {
-        int result = 0;
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                if (originCell[i][j] == LINE) {
-                    result++;
-                }
-            }
-        }
-        return result;
-    }
-
     // 방향을 고른다
     // 모든 core의 방향을 선택
     // 다 골라지면 임시셀을 만들고(복구용)
     // O(4^12 * N^2)
-    private static void setCoresDir(int idx, int coreCnt) {
+    private static void setCoresDir(int idx, int coreCnt, int lineSum) {
         if (idx == cores.size()) {
             if (coreCnt > result[0]) {
                 result[0] = coreCnt;
-                result[1] = compareOne();
+                result[1] = lineSum;
             } else if (coreCnt == result[0]) {
-                result[1] = Math.min(result[1], compareOne());
+                result[1] = Math.min(result[1], lineSum);
             }
             return;
         }
         for (int dir = 0; dir < 4; dir++) {
             // 현재 core에서 dir 방향으로 뻗어 나갈거야
             int cnt = coreCnt;
-            boolean canMake = makeLine(idx, dir);
-            if (canMake) {
+            int lineCnt = makeLine(idx, dir);
+            if (lineCnt != 0) {
                 cnt++;
             }
-            setCoresDir(idx + 1, cnt);
-            if (canMake) {
+            setCoresDir(idx + 1, cnt, lineSum + lineCnt);
+            if (lineCnt != 0) {
                 // erase Line
                 eraseLine(idx, dir);
             }
