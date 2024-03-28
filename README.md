@@ -1,7 +1,7 @@
 # Algorithm Study
 
 > 코딩 테스트를 위한 소소한 알고리즘 스터디
-- 언어: Python
+- 언어: Java, Python
 <details>
 <summary>👩‍💻</summary>
 <div markdown="1">
