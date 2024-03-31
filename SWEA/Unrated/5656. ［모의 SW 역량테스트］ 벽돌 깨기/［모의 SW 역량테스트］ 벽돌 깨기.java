@@ -125,7 +125,10 @@ public class Solution {
 		// n열 맨 위 벽돌 찾기
 		int x = 0;
 		while (true) {
-			if (arr[x][n] > 0) {
+			if (arr[x][n] == 1) {
+				arr[x][n] = 0;
+                break;
+			} else if (arr[x][n] >= 2) {
 				q.add(new Position(x, n, arr[x][n]));
 				break;
 			}
@@ -142,6 +145,8 @@ public class Solution {
 					int nc = now.c + dc[j] * i;
 					if (inRange(nr, nc)) {
 						if (arr[nr][nc] > 1)
+							q.add(new Position(nr, nc, arr[nr][nc]));
+                        if (arr[nr][nc] > 1)
 							q.add(new Position(nr, nc, arr[nr][nc]));
 						arr[nr][nc] = 0;
 					}
