@@ -2,29 +2,26 @@ import java.io.*;
 import java.util.*;
 
 class Main {
-    static int n;
-    static long m, arr[];
-
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         StringBuilder sb = new StringBuilder();
 
-        n = Integer.parseInt(br.readLine());
-        arr = new long[n];
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            arr[i] = Long.parseLong(st.nextToken());
-        }
+        for (int i = 0; i < n; i++)
+            arr[i] = Integer.parseInt(st.nextToken());
         Arrays.sort(arr);
 
-        m = Long.parseLong(br.readLine());
+        int m = Integer.parseInt(br.readLine());
         st = new StringTokenizer(br.readLine());
         while (st.hasMoreTokens()) {
-            long target = Long.parseLong(st.nextToken());
+            int target = Integer.parseInt(st.nextToken());
             int left = 0;
-            int right = arr.length - 1;
+            int right = n - 1;
             int result = 0;
+
             while (left <= right) {
                 int mid = (left + right) / 2;
                 if (arr[mid] == target) {
@@ -38,6 +35,6 @@ class Main {
             }
             sb.append(result).append("\n");
         }
-        System.out.print(sb);
+        System.out.println(sb);
     }
 }
