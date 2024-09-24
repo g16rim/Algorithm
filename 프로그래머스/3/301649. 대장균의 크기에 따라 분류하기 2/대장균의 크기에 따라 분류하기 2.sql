@@ -1,0 +1,19 @@
+WITH RANK_ECOLI AS (
+    SELECT
+        ID,
+        SIZE_OF_COLONY,
+        @rank := @rank + 1 AS RNK,
+        (SELECT COUNT(*) FROM ECOLI_DATA) AS TOTAL
+    FROM ECOLI_DATA, (SELECT @rank := 0) r
+    ORDER BY SIZE_OF_COLONY DESC
+)
+SELECT
+    ID,
+    CASE
+        WHEN RNK <= TOTAL * 0.25 THEN 'CRITICAL'
+        WHEN RNK <= TOTAL * 0.50 THEN 'HIGH'
+        WHEN RNK <= TOTAL * 0.75 THEN 'MEDIUM'
+        ELSE 'LOW'
+    END AS COLONY_NAME
+FROM RANK_ECOLI
+ORDER BY ID
