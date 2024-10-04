@@ -67,7 +67,7 @@ public class Main {
                 count++;
             }
 
-            if (count == E - 1) break;
+            if (count == V - 1) break;
         }
         System.out.println(sum);
     }
