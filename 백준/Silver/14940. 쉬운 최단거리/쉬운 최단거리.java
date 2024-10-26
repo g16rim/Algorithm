@@ -2,75 +2,65 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    private static int n, m, map[][], dist[][];
-    private static int[] dr = {-1, 1, 0, 0}, dc = {0, 0, -1, 1};
-    private static PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> o1[2] - o2[2]);
-    private static final int INF = 987654321;
-    private static StringBuilder sb = new StringBuilder();
-
+    private static int n, m, str, stc;
+    private static int[][] map;
+    private static boolean[][] visited;
+    private static int[] dr = {-1, 1, 0, 0};
+    private static int[] dc = {0, 0, -1, 1};
+    
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
+        
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
         map = new int[n][m];
-        dist = new int[n][m];
-        for (int i = 0; i < n; i++)
-            Arrays.fill(dist[i], INF);
+        visited = new boolean[n][m];
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < m; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
                 if (map[i][j] == 2) {
-                    pq.add(new int[]{i, j, 0});
-                    dist[i][j] = 0;
+                    str = i;
+                    stc = j;
                 }
             }
         }
-
+        
         bfs();
-//        debugPrint();
-        print();
-    }
-
-    private static void print() {
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (dist[i][j] != INF) sb.append(dist[i][j]).append(" ");
-                else {
-                    if (map[i][j] == 0) sb.append("0 ");
-                    else sb.append("-1 ");
+                if (!visited[i][j] && map[i][j] != 0) {
+                    sb.append("-1 ");
+                } else {
+                    sb.append(map[i][j]).append(" ");
                 }
             }
             sb.append("\n");
         }
         System.out.print(sb);
     }
-
+    
     private static void bfs() {
-        while (!pq.isEmpty()) {
-            int[] temp = pq.poll();
-            int r = temp[0];
-            int c = temp[1];
-            int d = temp[2];
-
+        Queue<int[]> q = new ArrayDeque<>();
+        q.add(new int[] {str, stc, 0});
+        map[str][stc] = 0;
+        visited[str][stc] = true;
+        
+        while (!q.isEmpty()) {
+            int[] temp = q.poll();
+            
             for (int i = 0; i < 4; i++) {
-                int nr = r + dr[i];
-                int nc = c + dc[i];
-
-                if (nr < 0 || nr >= n || nc < 0 || nc >= m || map[nr][nc] == 0) continue;
-
-                if (dist[nr][nc] > d + 1) {
-                    dist[nr][nc] = d + 1;
-                    pq.add(new int[]{nr, nc, d + 1});
-                }
+                int nr = temp[0] + dr[i];
+                int nc = temp[1] + dc[i];
+                
+                if (nr < 0 || nr >= n || nc < 0 || nc >= m || visited[nr][nc] == true || map[nr][nc] == 0) continue;
+                
+                map[nr][nc] = temp[2] + 1;
+                visited[nr][nc] = true;
+                q.add(new int[] {nr, nc, map[nr][nc]});
             }
         }
-    }
-
-    private static void debugPrint() {
-        for (int i = 0; i < n; i++)
-            System.out.println(Arrays.toString(dist[i]));
     }
 }
