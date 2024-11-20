@@ -9,11 +9,6 @@ public class Main {
         int y = Integer.parseInt(st.nextToken());
         int z = (int) ((long) y * 100 / x);
         
-        if (z >= 99) {
-            System.out.println(-1);
-            return;
-        }
-        
         int start = 1; // 추가로 이긴 게임 수
         int end = 1_000_000_000;
         int result = -1;
