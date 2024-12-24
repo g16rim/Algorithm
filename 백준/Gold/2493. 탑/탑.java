@@ -1,54 +1,32 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-
-    static class Node {
-        int index;
-        int height;
-
-        Node() {}
-
-        Node(int index, int height) {
-            this.index = index;
-            this.height = height;
-        }
-    }
-
+    
     public static void main(String[] args) throws Exception {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+        int n = Integer.parseInt(br.readLine());
+        int[] top = new int[n];
         StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < n; i++) top[i] = Integer.parseInt(st.nextToken());
+        
         StringBuilder sb = new StringBuilder();
-
-        Stack<Node> stack = new Stack<>();
-        for (int i = 1; i <= N; i++) {
-            int temp = Integer.parseInt(st.nextToken());
-
+        Stack<int[]> stack = new Stack<>();
+        
+        for (int i = 0; i < n; i++) {
+            while (!stack.isEmpty() && stack.peek()[0] <= top[i]) {
+                stack.pop(); // 현재 탑보다 낮은 탑 제거
+            }
+            
             if (stack.isEmpty()) {
                 sb.append("0 ");
-                stack.add(new Node(i, temp));
             } else {
-
-                while (!stack.isEmpty() && stack.peek().height <= temp) {
-                    stack.pop();
-                }
-                if (stack.isEmpty()) {
-                    sb.append("0 ");
-                } else {
-                    sb.append(stack.peek().index).append(" ");
-                }
-
-                stack.add(new Node(i, temp));
-
+                sb.append(stack.peek()[1]).append(" ");
             }
-
-
+            
+            stack.push(new int[] {top[i], i + 1});
         }
+        
         System.out.println(sb);
     }
-
 }
