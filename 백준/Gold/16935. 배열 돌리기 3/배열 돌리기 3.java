@@ -1,187 +1,173 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-
-    static int N, M, R;
-    static int[][] A = new int[110][110];
-
+    static int n, m, r, rN, rM;
+    static int[][] arr, resultArr;
+    static StringBuilder sb = new StringBuilder();
+    
     public static void main(String[] args) throws Exception {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
-        N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
-        R = Integer.parseInt(st.nextToken());
-
-        for (int i = 0; i < N; i++) {
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        r = Integer.parseInt(st.nextToken());
+        arr = new int[n][m];
+        for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < M; j++) {
-                A[i][j] = Integer.parseInt(st.nextToken());
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-
+        
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < R; i++) {
-            int comm = Integer.parseInt(st.nextToken());
-
-            switch (comm) {
-                case 1: // 성하 반전
-                    A = fun1();
+        while (r-- > 0) {
+            int command = Integer.parseInt(st.nextToken());
+            
+            switch (command) {
+                case 1:
+                    rotate1();
                     break;
-                case 2: // 좌우 반전
-                    A = fun2();
+                case 2:
+                    rotate2();
                     break;
-                case 3: // 오른쪽으로 90도 회전
-                    A = fun3();
+                case 3:
+                    rotate3();
                     break;
-                case 4: // 왼쪽으로 90도 회전
-                    A = fun4();
+                case 4:
+                    rotate4();
                     break;
                 case 5:
-                    A = fun5();
+                    rotate5();
                     break;
                 case 6:
-                    A = fun6();
+                    rotate6();
+            }
+            
+            n = rN;
+            m = rM;
+            arr = resultArr;
+        }
+        
+        print();
+        System.out.print(sb);
+    }
+    
+    static void rotate1() {
+        rN = n;
+        rM = m;
+        resultArr = new int[rN][rM];
+        
+        for (int i = 0; i < rN; i++) {
+            for (int j = 0; j < rM; j++) {
+                resultArr[rN - i - 1][j] = arr[i][j];
             }
         }
-
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                sb.append(A[i][j]).append(" ");
+    }
+    
+    static void rotate2() {
+        rN = n;
+        rM = m;
+        resultArr = new int[rN][rM];
+        
+        for (int i = 0; i < rN; i++) {
+            for (int j = 0; j < rM; j++) {
+                resultArr[i][rM - j - 1] = arr[i][j];
+            }
+        }
+    }
+    
+    static void rotate3() {
+        rN = m;
+        rM = n;
+        resultArr = new int[rN][rM];
+        
+        for (int i = 0; i < rN; i++) {
+            for (int j = 0; j < rM; j++) {
+                resultArr[i][rM - j - 1] = arr[j][i];
+            }
+        }
+    }
+    
+    static void rotate4() {
+        rN = m;
+        rM = n;
+        resultArr = new int[rN][rM];
+        
+        for (int i = 0; i < rN; i++) {
+            for (int j = 0; j < rM; j++) {
+                resultArr[rN - i - 1][j] = arr[j][i];
+            }
+        }
+    }
+    
+    static void rotate5() {
+        rN = n;
+        rM = m;
+        resultArr = new int[rN][rM];
+        
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = 0; j < m / 2; j++) {
+                resultArr[i][j + m / 2] = arr[i][j];
+            }
+        }
+        
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = m / 2; j < m; j++) {
+                resultArr[i + n / 2][j] = arr[i][j];
+            }
+        }
+        
+        for (int i = n / 2; i < n; i++) {
+            for (int j = m / 2; j < m; j++) {
+                resultArr[i][j - m / 2] = arr[i][j];
+            }
+        }
+        
+        for (int i = n / 2; i < n; i++) {
+            for (int j = 0; j < m / 2; j++) {
+                resultArr[i - n / 2][j] = arr[i][j];
+            }
+        }
+    }
+    
+    static void rotate6() {
+        rN = n;
+        rM = m;
+        resultArr = new int[rN][rM];
+        
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = 0; j < m / 2; j++) {
+                resultArr[i + n / 2][j] = arr[i][j];
+            }
+        }
+        
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = m / 2; j < m; j++) {
+                resultArr[i][j - m / 2] = arr[i][j];
+            }
+        }
+        
+        for (int i = n / 2; i < n; i++) {
+            for (int j = m / 2; j < m; j++) {
+                resultArr[i - n / 2][j] = arr[i][j];
+            }
+        }
+        
+        for (int i = n / 2; i < n; i++) {
+            for (int j = 0; j < m / 2; j++) {
+                resultArr[i][j + m / 2] = arr[i][j];
+            }
+        }
+    }
+    
+    static void print() {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                sb.append(arr[i][j]);
+                if (j != m - 1) sb.append(" ");
             }
             sb.append("\n");
         }
-
-        System.out.println(sb);
-
     }
-
-    static int[][] fun1() {
-        int[][] temp = new int[110][110];
-
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                temp[i][j] = A[N - 1 - i][j];
-            }
-        }
-
-        return temp;
-    }
-
-    static int[][] fun2() {
-        int[][] temp = new int[110][110];
-
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                temp[i][j] = A[i][M - 1 - j];
-            }
-        }
-
-        return temp;
-    }
-
-    static int[][] fun3() {
-        int[][] temp = new int[110][110];
-
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                temp[i][j] = A[N - 1 - j][i];
-            }
-        }
-
-        int L = M;
-        M = N;
-        N = L;
-
-        return temp;
-    }
-
-    static int[][] fun4() {
-        int[][] temp = new int[110][110];
-
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                temp[i][j] = A[j][M - 1 - i];
-            }
-        }
-
-        int L = M;
-        M = N;
-        N = L;
-
-        return temp;
-    }
-
-    static int[][] fun5() {
-        int[][] temp = new int[110][110];
-
-        // 1번 그룹 -> 2번 그룹
-        for (int i = 0; i < N / 2; i++) {
-            for (int j = 0; j < M / 2; j++) {
-                temp[i][j + M / 2] = A[i][j];
-            }
-        }
-
-        // 2번 그룹 -> 3번 그룹
-        for (int i = 0; i < N / 2; i++) {
-            for (int j = M / 2; j < M; j++) {
-                temp[i + N / 2][j] = A[i][j];
-            }
-        }
-
-        // 3번 그룹 -> 4번 그룹
-        for (int i = N / 2; i < N; i++) {
-            for (int j = M / 2; j < M; j++) {
-                temp[i][j - M / 2] = A[i][j];
-            }
-        }
-
-        // 4번 그룹 -> 1번 그룹
-        for (int i = N / 2; i < N; i++) {
-            for (int j = 0; j < M / 2; j++) {
-                temp[i - N / 2][j] = A[i][j];
-            }
-        }
-
-        return temp;
-    }
-
-    static int[][] fun6() {
-        int[][] temp = new int[110][110];
-
-        // 1번 그룹 -> 4번 그룹
-        for (int i = 0; i < N / 2; i++) {
-            for (int j = 0; j < M / 2; j++) {
-                temp[i + N / 2][j] = A[i][j];
-            }
-        }
-
-        // 4번 그룹 -> 3번 그룹
-        for (int i = N / 2; i < N; i++) {
-            for (int j = 0; j < M / 2; j++) {
-                temp[i][j + M / 2] = A[i][j];
-            }
-        }
-
-        // 3번 그룹 -> 2번 그룹
-        for (int i = N / 2; i < N; i++) {
-            for (int j = M / 2 ; j < M; j++) {
-                temp[i - N / 2][j] = A[i][j];
-            }
-        }
-
-        // 2번 그룹 -> 1번 그룹
-        for (int i = 0; i < N / 2; i++) {
-            for (int j = M / 2; j < M; j++) {
-                temp[i][j - M / 2] = A[i][j];
-            }
-        }
-
-        return temp;
-    }
-
 }
