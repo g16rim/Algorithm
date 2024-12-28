@@ -1,68 +1,64 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-	static int N, M, result, answer;
-	static int[][] city;
-	static List<int[]> chickenHouse = new ArrayList<>();
-	static boolean[] visited;
-
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
-		city = new int[N][N];
-		for (int i = 0; i < N; i++) {
-			st = new StringTokenizer(br.readLine());
-			for (int j = 0; j < N; j++) {
-				city[i][j] = Integer.parseInt(st.nextToken());
-				if (city[i][j] == 2) chickenHouse.add(new int[] {i, j});
-			}
-		}
-		visited = new boolean[chickenHouse.size()];
-		answer = Integer.MAX_VALUE;
-		pickChickenHouse(0, 0);
-		System.out.println(answer);
-	}
-	
-	static void pickChickenHouse(int idx, int size) {
-		if (size == M) {
-			for (int i = 0; i < N; i++) {
-				for (int j = 0; j < N; j++) {
-					if (city[i][j] == 1) {
-						calcChickenDist(i, j);
-					}
-				}
-			}
-			answer = Math.min(answer, result);
-			result = 0;
-			return;
-		}
-		
-		if (idx >= chickenHouse.size()) return;
-		
-		visited[idx] = true;
-		pickChickenHouse(idx + 1, size + 1);
-		
-		visited[idx] = false;
-		pickChickenHouse(idx + 1, size);
-	}
-	
-	static void calcChickenDist(int x, int y) {
-		int temp = Integer.MAX_VALUE;
-		for (int i = 0; i < chickenHouse.size(); i++) {
-			if (visited[i] == false) continue;
-			temp = Math.min(temp, getDistance(x, y, chickenHouse.get(i)[0], chickenHouse.get(i)[1]));
-		}
-		result += temp;
-	}
-	
-	static int getDistance(int r1, int c1, int r2, int c2) {
-		return Math.abs(r1 - r2) + Math.abs(c1 - c2);
-	}
-	
+    static int n, m, result = Integer.MAX_VALUE, temp;
+    static int[][] arr;
+    static List<int[]> chicken = new ArrayList<>();
+    static boolean[] visited;
+    
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        arr = new int[n][n];
+        
+        int homeCnt = 0;
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < n; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
+                if (arr[i][j] == 2) chicken.add(new int[] {i, j});
+            }
+        }
+        
+        visited = new boolean[chicken.size()];
+        comb(0, 0);
+        System.out.println(result);
+    }
+    
+    static void comb(int idx, int cnt) {
+        if (cnt == m) {
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (arr[i][j] == 1) calcDist(i, j);
+                }
+            }
+            result = Math.min(result, temp);
+            temp = 0;
+            return;
+        }
+        
+        if (idx >= chicken.size()) return;
+        
+        visited[idx] = true;
+        comb(idx + 1, cnt + 1);
+        
+        visited[idx] = false;
+        comb(idx + 1, cnt);
+    }
+    
+    static void calcDist(int x, int y) {
+        int dist = Integer.MAX_VALUE;
+        for (int i = 0; i < chicken.size(); i++) {
+            if (!visited[i]) continue;
+            dist = Math.min(dist, getDistance(x, y, chicken.get(i)[0], chicken.get(i)[1]));
+        }
+        temp += dist;
+    }
+    
+    static int getDistance(int x1, int y1, int x2, int y2) {
+        return Math.abs(x1 - x2) + Math.abs(y1 - y2);
+    }
 }
