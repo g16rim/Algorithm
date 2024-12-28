@@ -2,63 +2,61 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static int n, m, result = Integer.MAX_VALUE, temp;
-    static int[][] arr;
-    static List<int[]> chicken = new ArrayList<>();
-    static boolean[] visited;
-    
+    static int n, m, result = Integer.MAX_VALUE;
+    static List<int[]> homes = new ArrayList<>();
+    static List<int[]> chickens = new ArrayList<>();
+    static boolean[] selected;
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
-        arr = new int[n][n];
-        
-        int homeCnt = 0;
+
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < n; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
-                if (arr[i][j] == 2) chicken.add(new int[] {i, j});
+                int value = Integer.parseInt(st.nextToken());
+                if (value == 1) homes.add(new int[]{i, j}); // 집
+                if (value == 2) chickens.add(new int[]{i, j}); // 치킨집
             }
         }
-        
-        visited = new boolean[chicken.size()];
+
+        selected = new boolean[chickens.size()];
         comb(0, 0);
         System.out.println(result);
     }
-    
+
     static void comb(int idx, int cnt) {
         if (cnt == m) {
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (arr[i][j] == 1) calcDist(i, j);
-                }
-            }
-            result = Math.min(result, temp);
-            temp = 0;
+            result = Math.min(result, calcTotalDistance());
             return;
         }
-        
-        if (idx >= chicken.size()) return;
-        
-        visited[idx] = true;
+        if (idx >= chickens.size()) return;
+
+        // 현재 치킨집 선택
+        selected[idx] = true;
         comb(idx + 1, cnt + 1);
-        
-        visited[idx] = false;
+
+        // 현재 치킨집 선택하지 않음
+        selected[idx] = false;
         comb(idx + 1, cnt);
     }
-    
-    static void calcDist(int x, int y) {
-        int dist = Integer.MAX_VALUE;
-        for (int i = 0; i < chicken.size(); i++) {
-            if (!visited[i]) continue;
-            dist = Math.min(dist, getDistance(x, y, chicken.get(i)[0], chicken.get(i)[1]));
+
+    static int calcTotalDistance() {
+        int totalDistance = 0;
+
+        for (int[] home : homes) {
+            int minDistance = Integer.MAX_VALUE;
+            for (int i = 0; i < chickens.size(); i++) {
+                if (selected[i]) {
+                    int[] chicken = chickens.get(i);
+                    minDistance = Math.min(minDistance, Math.abs(home[0] - chicken[0]) + Math.abs(home[1] - chicken[1]));
+                }
+            }
+            totalDistance += minDistance;
         }
-        temp += dist;
-    }
-    
-    static int getDistance(int x1, int y1, int x2, int y2) {
-        return Math.abs(x1 - x2) + Math.abs(y1 - y2);
+
+        return totalDistance;
     }
 }
