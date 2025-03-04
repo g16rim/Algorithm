@@ -1,35 +1,33 @@
 import java.util.*;
 
 class Solution {
-    private int[] dr = {-1, 1, 0, 0}, dc = {0, 0, -1, 1};
-    
     public int solution(int[][] maps) {
-        int answer = 987654321;
         int n = maps.length;
         int m = maps[0].length;
+        boolean[][] visited = new boolean[n][m];
+        int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
         
         Queue<int[]> q = new ArrayDeque<>();
         q.add(new int[] {0, 0, 1});
-        maps[0][0] = -1;
+        visited[0][0] = true;
+        
         while (!q.isEmpty()) {
-            int[] temp = q.poll();
-            if (temp[0] == n-1 && temp[1] == m-1) {
-                answer = Math.min(answer, temp[2]);
+            int[] cur = q.poll();
+            if (cur[0] == n - 1 && cur[1] == m - 1) {
+                return cur[2];
             }
             
-            for (int i = 0; i < 4; i++) {
-                int nr = temp[0] + dr[i];
-                int nc = temp[1] + dc[i];
+            for (int i = 0; i < dir.length; i++) {
+                int nr = cur[0] + dir[i][0];
+                int nc = cur[1] + dir[i][1];
                 
-                if (nr < 0 || nr >= n || nc < 0 || nc >= m || maps[nr][nc] != 1) 
-                    continue;
+                if (nr < 0 || nr >= n || nc < 0 || nc >= m || visited[nr][nc] || maps[nr][nc] == 0) continue;
                 
-                maps[nr][nc] = -1;
-                q.add(new int[] {nr, nc, temp[2] + 1});
+                q.add(new int[] {nr, nc, cur[2] + 1});
+                visited[nr][nc] = true;
             }
         }
         
-        if (answer == 987654321) answer = -1;
-        return answer;
+        return -1;
     }
 }
