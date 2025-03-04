@@ -1,37 +1,37 @@
 import java.util.*;
 
 class Solution {
-    private class Node {
+    class Word {
         String word;
-        int count;
+        int cnt;
         
-        public Node(String word, int count) {
+        Word(String word, int cnt) {
             this.word = word;
-            this.count = count;
+            this.cnt = cnt;
         }
     }
     
     public int solution(String begin, String target, String[] words) {
+        Queue<Word> q = new ArrayDeque<>();
         boolean[] visited = new boolean[words.length];
-        Queue<Node> q = new ArrayDeque<>();
-        q.add(new Node(begin, 0));
+        q.add(new Word(begin, 0));
         
         while (!q.isEmpty()) {
-            Node temp = q.poll();
-            if (temp.word.equals(target)) {
-                return temp.count;
-            }
+            Word cur = q.poll();
+            
+            if (cur.word.equals(target)) return cur.cnt;
             
             for (int i = 0; i < words.length; i++) {
+                if (visited[i]) continue;
+                
                 int diff = 0;
-                for (int j = 0; j < words[i].length(); j++) {
-                    if (temp.word.charAt(j) != words[i].charAt(j)) {
+                for (int j = 0; j < begin.length(); j++) {
+                    if (cur.word.charAt(j) != words[i].charAt(j)) {
                         diff++;
                     }
                 }
-                
-                if (!visited[i] && diff == 1) {
-                    q.add(new Node(words[i], temp.count + 1));
+                if (diff == 1) {
+                    q.add(new Word(words[i], cur.cnt + 1));
                     visited[i] = true;
                 }
             }
